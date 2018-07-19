@@ -1,0 +1,2 @@
+(λg.((λf.((λx.(f (x x)))(λx.(f (x x))))) g))
+CAN'T REDUCE
