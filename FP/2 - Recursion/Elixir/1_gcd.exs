@@ -7,8 +7,9 @@ defmodule GCD do
     IO.puts calc(a, b)
   end
 
+  def calc(a, 0.0), do: a
   def calc(a, b) do
-    if b == 0, do: a, else: round calc(b, :math.fmod(a, b))
+    round calc(b, :math.fmod(a,b))
   end
 end
 

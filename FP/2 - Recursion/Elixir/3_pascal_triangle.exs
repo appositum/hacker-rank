@@ -5,7 +5,7 @@ defmodule Solution do
     pascals()
     |> Enum.take(n)
     |> Enum.map(fn list -> Enum.map(list, &Integer.to_string/1) end)
-    |> Enum.map(&(Enum.join &1, " "))
+    |> Enum.map(& Enum.join(&1, " "))
     |> Enum.each(&IO.puts/1)
   end
 
