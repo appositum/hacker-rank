@@ -1,9 +1,9 @@
 module Main where
 
 gcd' :: (Integral a) => a -> a -> a
-gcd' n m =
-    if m == 0 then n
-    else gcd' m (n `mod` m)
+gcd' n m
+    | m == 0    = n
+    | otherwise = gcd' m (n `mod` m)
 
 -- This part is related to the Input/Output and can be used as it is
 -- Do not modify it
