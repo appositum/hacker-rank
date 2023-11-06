@@ -4,14 +4,14 @@ defmodule Solution do
 
     pascals()
     |> Enum.take(n)
-    |> Enum.map(fn list -> Enum.map(list, &(Integer.to_string &1)) end)
+    |> Enum.map(fn list -> Enum.map(list, &Integer.to_string/1) end)
     |> Enum.map(&(Enum.join &1, " "))
-    |> Enum.each(&(IO.puts &1))
+    |> Enum.each(&IO.puts/1)
   end
 
   def pascals do
     Stream.iterate [1], fn row ->
-      zip_with([0] ++ row, row ++ [0], fn x,y -> x+y end)
+      zip_with([0] ++ row, row ++ [0], fn x, y -> x + y end)
       |> Enum.to_list()
     end
   end
